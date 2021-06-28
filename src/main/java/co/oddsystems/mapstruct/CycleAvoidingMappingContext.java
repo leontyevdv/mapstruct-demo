@@ -3,9 +3,13 @@ package co.oddsystems.mapstruct;
 import java.util.IdentityHashMap;
 import java.util.Map;
 import org.mapstruct.BeforeMapping;
+import org.mapstruct.Context;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.TargetType;
 
+/**
+ * A type to be used as {@link Context} parameter to track cycles in graphs.
+ */
 public class CycleAvoidingMappingContext {
 
     private Map<Object, Object> knownInstances = new IdentityHashMap<>();
